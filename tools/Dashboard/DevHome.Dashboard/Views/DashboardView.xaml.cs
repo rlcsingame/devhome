@@ -577,7 +577,7 @@ public partial class DashboardView : ToolPage, IDisposable
                 TelemetryFactory.Get<ITelemetry>().Log(
                     "Dashboard_ReportPinnedWidget",
                     LogLevel.Critical,
-                    new ReportPinnedWidgetEvent(comSafeWidgetDefinition.ProviderDefinitionId, widgetDefinitionId));
+                    new ReportPinnedWidgetEvent(comSafeWidgetDefinition.ProviderDefinition.Id, widgetDefinitionId));
 
                 var wvm = _widgetViewModelFactory(widget, size, comSafeWidgetDefinition);
                 _dispatcherQueue.TryEnqueue(() =>
